@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+:root{
+    --DarkBlue:hsl(240, 38%, 20%);
+    --GrayishBlue:hsl(240, 18%, 77%);
+}
+*{
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+}
+section {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    margin-top:50px;
+    max-width: 78%;
+    gap: 20px;
+}
+.image-bg{
+    height: auto;
+    width: auto;
+    position: relative;
+    overflow: hidden;
+}
+.image-bg>img{
+    height:100%;
+    width:100%;
+}
+.image-bg>.image-slider{
+    height: 90%;
+    width:100%;
+    position:absolute;
+    top:0;
+    margin-top: 23px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+.image-bg>.image-slider>img{
+    height: 92%;
+    width: 78%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sliders{
+    background:whitesmoke;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width:60px;
+    z-index: 2;
+    margin-top: 48px;
+    position: absolute;
+}
+.sliders>.prev{
+    background-color:whitesmoke;
+    height:100%;
+    width:50%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.sliders>.prev>#arrowLeft{
+    transform:scale(.75);
+    opacity: .7;
+    transition: all .3s ease-in-out;
+}
+.sliders>.next{
+    background-color:whitesmoke;
+    height:100%;
+    width:50%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.sliders>.next>#arrowRight{
+    transform:scale(.75);
+    opacity: .7;
+    transition: all .3s ease-in-out;
+}
+.sliders>.prev>#arrowLeft:hover{
+    opacity: 1;
+}
+.sliders>.next>#arrowRight:hover{
+    opacity: 1;
+}
+.sliders>.next:hover{
+    background-color: var(--GrayishBlue);
+}
+.sliders>.prev:hover{
+    background-color: var(--GrayishBlue);
+}
+.container{
+    background-image: url('images/pattern-quotes.svg');
+    background-repeat: no-repeat;
+    background-position:top center;
+    background-size:20% 23%;
+    padding-top: 7px;
+}
+.container>.testimony{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+}
+.container>.testimony>p{
+    font-size: 17px;
+    opacity: 0.6;
+    font-weight: 300;
+}
+.container>.testimony>.profession>h3{
+    font-size: .9em;
+}
+.container>.testimony>.profession>p{
+    font-size:15px;
+    font-weight: 400;
+    opacity: .4;
+}
+@keyframes moveForward {
+ from{
+    opacity: 0;
+    transform: translateX(100%);
+ }
+ to{
+    opacity: 1;
+    transform: translateX(0);
+ }
+}
+
+@keyframes moveReverse {
+ from{
+    opacity: 0;
+    transform: translateX(-100%);
+}
+ to{
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+
+
+.attribution { font-size: 11px; 
+    text-align: center;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+.footer-curve{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
+@media screen and (min-width:1000px) {
+ section {
+    flex-direction:row-reverse;
+    justify-content:center;
+    align-items:center;
+    gap: 0px;
+    max-width: 80%;
+    height:100%;
+    margin-left: 190px;
+ }  
+ .image-bg{
+    height: auto;
+    width:auto;
+    transform: scale(.6);
+}
+ .container{
+    background-size:20% 50%;
+    padding-top: 50px;
+    z-index: 2;
+    position:absolute;
+    max-width: 28vw;
+    margin-right: 43.5%;
+}
+.container>.testimony{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    gap: 12px;
+}
+.container>.testimony>p{
+    font-size: 20px;
+    opacity: 1;
+    font-weight: 300;
+}
+.container>.testimony>.profession{
+    display: flex;
+    gap: 5px;
+}
+.container>.testimony>.profession>h3{
+    font-size: .9em;
+}
+.container>.testimony>.profession>p{
+    font-size:15px;
+    font-weight: 400;
+    opacity: .4;
+}
+.sliders{
+    bottom:15%;
+    position: absolute;
+    margin-right: 170px;
+}
+}
